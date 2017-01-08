@@ -8,6 +8,7 @@ server.on('connection', function(socket) {
     socket.on('message', function(data) {
         console.log('Message received:' + data);
 
+        console.log('Client count: ' + server.clients.length);
         server.clients.forEach(function(client) {
             try {
                 client && client.send(data);
